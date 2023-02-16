@@ -5,7 +5,7 @@ import keras
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from xgboost import XGBRFClassifier
 
 data = pd.read_csv("brain_stroke.csv")
