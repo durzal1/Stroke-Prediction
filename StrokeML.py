@@ -1,9 +1,11 @@
 import pandas as pd
+import numpy as np
+# import tensorflow
 
-print("hello")
 data = pd.read_csv("brain_stroke.csv")
 
-print('TEst')
 print(data.columns)
-#data.drop(['work_type'], axis=1) cmd isn't working for some reason
-#print(data.columns)
+
+data.drop(['work_type'], axis=1)
+
+print(data.columns);
