@@ -80,7 +80,7 @@ for q in range(range_):
     model.summary()
     model.compile(optimizer="adam", loss = "binary_crossentropy", metrics= ["accuracy"])
 
-    model.fit(X_train,y_train, epochs = 10)
+    model.fit(X_train,y_train, epochs = 100)
 
     y_log = model.predict(X_test)
 

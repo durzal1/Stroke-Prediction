@@ -26,15 +26,20 @@ y_log = model.predict(X_test)
 
 
 # BMI, Age, Glucose Data Sets
-
-xA = data['age'].values
-yB = data['bmi'].vaues
-
+size = len(y_test)
+xA = [0] * size
+yB = [0] * size
+yG = [0] * size
+for i in range(size):
+        xA[i] = X_test[i, 1]
+        yB[i] = X_test[i, 8]
+        yG[i] = X_test[i, 7]
 xB = yB
-yG = data['avg_glucose'].values
 
 zp = y_log
 zt = y_test
+
+
 
 # Age vs BMI vs Stroke Chance (xA, yB, zp + zt)
 
@@ -49,28 +54,34 @@ at1.set(xticklabels=[],
         yticklabels=[],
         zticklabels=[])
 
-# Age vs Avg Glucose vs Stroke Chance (xA, yG, zp + zt)
+ap1.set_xlabel('Age')
+ap1.set_ylabel('BMI')
+ap1.set_zlabel('Predicted Stroke Chance')
+ap1.axis([1, 85, 15, 50])
+plt.show()
 
-fig, ap2 = plt.subplots(subplot_kw={"projection": "3d"})
-ap2.scatter(xA, yG, zp)
-ap2.set(xticklabels=[],
-        yticklabels=[],
-        zticklabels=[])
-fig, at2 = plt.subplots(subplot_kw={"projection": "3d"})
-at2.scatter(xA, yG, zt)
-at2.set(xticklabels=[],
-        yticklabels=[],
-        zticklabels=[])
-
-# BMI vs Avg Glucose vs Stroke Chance (xB, yG, zp + zt)
-
-fig, ap3 = plt.subplots(subplot_kw={"projection": "3d"})
-ap3.scatter(xB, yG, zp)
-ap3.set(xticklabels=[],
-        yticklabels=[],
-        zticklabels=[])
-fig, at3 = plt.subplots(subplot_kw={"projection": "3d"})
-at3.scatter(xB, yG, zt)
-at3.set(xticklabels=[],
-        yticklabels=[],
-        zticklabels=[])
+# # Age vs Avg Glucose vs Stroke Chance (xA, yG, zp + zt)
+#
+# fig, ap2 = plt.subplots(subplot_kw={"projection": "3d"})
+# ap2.scatter(xA, yG, zp)
+# ap2.set(xticklabels=[],
+#         yticklabels=[],
+#         zticklabels=[])
+# fig, at2 = plt.subplots(subplot_kw={"projection": "3d"})
+# at2.scatter(xA, yG, zt)
+# at2.set(xticklabels=[],
+#         yticklabels=[],
+#         zticklabels=[])
+#
+# # BMI vs Avg Glucose vs Stroke Chance (xB, yG, zp + zt)
+#
+# fig, ap3 = plt.subplots(subplot_kw={"projection": "3d"})
+# ap3.scatter(xB, yG, zp)
+# ap3.set(xticklabels=[],
+#         yticklabels=[],
+#         zticklabels=[])
+# fig, at3 = plt.subplots(subplot_kw={"projection": "3d"})
+# at3.scatter(xB, yG, zt)
+# at3.set(xticklabels=[],
+#         yticklabels=[],
+#         zticklabels=[])
