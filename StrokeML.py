@@ -1,9 +1,9 @@
 import pandas as pd
-import numpy as np
-import tensorflow as tf
 import keras
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+import tensorflow as tf
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from xgboost import XGBRFClassifier
