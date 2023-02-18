@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 plt.style.use('_mpl-gallery')
 
-model = keras.models.load_model('E:\PyCharm Community Edition 2022.2.4\Github\Stroke-Prediction\Models')
+model = keras.models.load_model(r'Good Models')
 
 data = pd.read_csv("brain_stroke.csv")
 data['gender'] = data['gender'].map({'Male': 1, 'Female': 2})
