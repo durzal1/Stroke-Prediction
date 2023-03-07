@@ -1,7 +1,7 @@
 # Stroke-Prediction
-Predicts patient likelihood of a stroke.
+Predicts patient likelihood of a stroke. Models such as this one have the potential to revolutionize the health care industry by providing doctors and patients more personalized statistics pertaining to the diagnosis and treatment. This could save lives.
 
-However, due to the nature of the data, no individual prediction was greater than a 30% chance of a stroke since a large majority of the patients from the test data did not experience a stroke. Thus, this proves that having a stroke in itself is a rare occurence. So consider 30% chance a high chance for the sake of this model. 
+However, due to the nature of the data, no individual prediction was greater than a 30% chance of a stroke since a large majority of the patients from the test data did not experience a stroke. Thus, this proves that having a stroke in itself is a rare occurence. So consider 30% chance an extremely high chance for the sake of this model. 
 
 # The Model
 
