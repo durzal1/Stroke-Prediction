@@ -1,5 +1,5 @@
 # Stroke-Prediction
-Predict if patient is likely to have a stroke
+Predicts patient likelihood of a stroke.
 
 However, due to the nature of the data, no individual prediction was greater than a 30% chance of a stroke since a large majority of the patients from the test data did not experience a stroke. Thus, this proves that having a stroke in itself is a rare occurence. So consider 30% chance a high chance for the sake of this model. 
 
@@ -12,19 +12,19 @@ Input personal details and press submit
 ![image](https://user-images.githubusercontent.com/67489054/219912858-49ba4c5f-ba1e-4833-90da-88137ab21c65.png)
 
 
-Your percent likelihood of stroke will be outputed to the screen. 
+Your percent likelihood of stroke according to our model will be outputed to the screen. 
 
 ![image](https://user-images.githubusercontent.com/67489054/219913279-e3939a7b-4bed-4d7d-8773-f81dcb080458.png)
 
 # Results
 
 After we trained the ML Model, we used a 3d scatterplot to graph it and attempt to find two variables that together may signify a higher chance of strokes in patients.
-
+The StrokeGraphs.py file creates these graphs.
 
 Note: The Left will have a picture of our Models predictions while the right will have a picture of the true data.
 
 
-Here are the results:
+Here are the results: 
 
 1) Age vs BMI 
 
@@ -52,3 +52,4 @@ Both BMI's and Avg Glucose Level's relationships with stroke prediction and inci
 Neither of these have a strong impact on stroke occurence without by themselves or with each other.
 They could still have a strong impact when combined with other variables not explored in these graphs.
 
+Lastly, there is the StrokeML model itself. This model first reads in the data from the csv, splits it into the appriopriate groups(X-train, X-test, and Y-train, Y-test), and normalizes the data so that all of the values lie between 0 and 1. Then the model was created and ran. The model constitutes three internal layers of 100 nodes each ran for 200 generations. For each layer, we used the sigmoid function because this yieled the best results. The sigmoid function likely works so well because of its outlier-resistant nature as well as its strictly positive output. Once the model was trained, it's accuracy is tested. This was done by giving the model each subject from the test data and placing them into the appropriate group of 0-5%, 5-10%, 10-15%, 15-20%, or 20-100% predicted chance of stroke. Once these groups were fully filled, their average predicted chance was calculated and compared to the actual percentage of strokes that occured in the group. The best models achieved less than 20% errors for all of the groups. 
